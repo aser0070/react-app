@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
-function App() {
+export default function App() {
+
+  const [message, setMessage] = useState('hello');
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +21,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>message: {message}</p>
+        <input onChange={e => setMessage(e.target.value)} value={message} />
       </header>
     </div>
   );
 }
-
-export default App;
